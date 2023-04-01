@@ -1,6 +1,10 @@
 ## Полезные ссылки
 - https://pyprog.pro/mpl/mpl_short_guide.html
 - https://www.youtube.com/watch?v=3Dg80_MJSvo
+- https://pythonworld.ru/numpy/100-exercises.html
+- https://pythonworld.ru/numpy
+- https://pythonworld.ru/novosti-mira-python/scientific-graphics-in-python.html
+- https://jenyay.net/Matplotlib/Figures
 ---
 ## Тезисы из видоса
 ### на 4: 
