@@ -21,6 +21,24 @@ def calc_f(x):
     f_x[4] = x[2] + x[2]*np.sin(angle + x[4]) - B_y
     return f_x
 
+def graphing(x):
+    radius1 = ((x[0] - A_x)**2 + (x[2] - A_y)**2)**0.5 #считаем радиус по Пифагору
+    radius2 = ((x[1] - B_x)**2 + (x[2] - B_y)**2)**0.5
+    axes = plt.gca() # получение поля для рисования
+    axes.set_aspect("equal") # равномасштабность по x и y, дабы круг не был эллипсом
+    plt.plot((A_x, B_x), (A_y, B_y)) # крышка (первый массив координаты иксов точек, второй - игреков)
+    plt.plot((x[0], x[1]), (x[2] - radius1, x[2] - radius2)) # пол
+                                     # центр     |  высота   | ширина
+    circle1 = matplotlib.patches.Arc((x[0], x[2]), 2*radius1, 2*radius1,
+                                        0, (angle - x[3])*180/np.pi,    angle*180/np.pi)
+                         # угол поворота | угол начала (0 = три часа) | угол конца
+    circle2 = matplotlib.patches.Arc((x[1], x[2]), 2*radius2, 2*radius2,
+                                        270, 0, x[4]*180/np.pi)
+    axes.add_patch(circle1) # добавление фигуры на поле
+    axes.add_patch(circle2)
+    
+    plt.show()
+
 # x1 | x2 | y | fi1 | fi2
 x = np.zeros(5, dtype=np.float64)
 
@@ -32,3 +50,4 @@ for i in range(100):
 
 # graphing
 print("Здесь могла быть ваша реклама")
+graphing(x)

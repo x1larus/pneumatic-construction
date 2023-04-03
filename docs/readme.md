@@ -5,6 +5,8 @@
 - https://pythonworld.ru/numpy
 - https://pythonworld.ru/novosti-mira-python/scientific-graphics-in-python.html
 - https://jenyay.net/Matplotlib/Figures
+- https://jenyay.net/Matplotlib/Figures
+- https://pyprog.pro/mpl/mpl_plot.html
 ---
 ## Тезисы из видоса
 ### на 4: 
