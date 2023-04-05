@@ -9,7 +9,8 @@ A_y = B_y = 0.3
 C = 3*np.pi / 8
 t = 0.1
 angle = 3*np.pi / 2
-eps = 0.00001
+eps = 0.00000001
+tau = 0.005
 
 def calc_f(x):
     # пункт 1.2 тз
@@ -42,8 +43,8 @@ def graphing(x):
 # x1 | x2 | y | fi1 | fi2
 x = np.zeros(5, dtype=np.float64)
 
-for i in range(100):
-    x_next = x - calc_f(x)
+while 1:
+    x_next = x - calc_f(x)*tau
     if all(x_next - x < eps):
         break
     x = x_next
