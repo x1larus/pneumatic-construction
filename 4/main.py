@@ -11,7 +11,7 @@ C = 3*np.pi / 8
 t = 0.01
 angle = 3*np.pi / 2
 eps = 0.0000001 
-tau = 0.005
+tau = 0.9
 m = 100
 p = 2000
 g = 9.8
@@ -33,8 +33,8 @@ def calc_f(x):
 def graphing(x):
     radius1 = ((x[0] - A_x)**2 + (x[2] - A_y)**2)**0.5 #считаем радиус по Пифагору
     radius2 = ((x[1] - B_x)**2 + (x[2] - B_y)**2)**0.5
-    plt.plot((A_x, B_x), (A_y, B_y)) # крышка (первый массив координаты иксов точек, второй - игреков)
-    plt.plot((x[0], x[1]), (0, 0)) # пол
+    plt.plot((A_x, B_x), (A_y, B_y), color = 'black') # крышка (первый массив координаты иксов точек, второй - игреков)
+    plt.plot((x[0], x[1]), (0, 0), color = 'black') # пол
                                      # центр     |  высота   | ширина
     circle1 = matplotlib.patches.Arc((x[0], x[2]), 2*radius1, 2*radius1,
                                         0, (angle - x[3])*180/np.pi,    angle*180/np.pi)
